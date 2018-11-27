@@ -11,7 +11,7 @@ public class HelloWorld {
 		 */
 		
 	     System.out.println("Hallo Klasse");
-		System.out.printIn("Schönen Abend");
+		 System.out.println("Schönen Abend");
 
 	}
 

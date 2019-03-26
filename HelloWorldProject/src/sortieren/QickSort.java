@@ -17,6 +17,8 @@ public class QickSort {
 	private static void quicksort(int links, int rechts) {
 		if (links < rechts) {
 			int teiler = teile(links, rechts);
+			quicksort(links, teiler-1);
+			quicksort(teiler + 1, rechts);
 		}
 
 	}

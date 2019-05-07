@@ -15,12 +15,14 @@ import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.events.MouseEvent;
 
 public class MyFirstGUI extends MyFirstGUIWindow {
-	private static Text VN;
-	private static Text NN;
-	private static Text STR;
-	private static Text HN;
-	private static Text PLZ;
-	private static Text Ort;
+	private static Text VornameTF;
+	private static Text NachnameTF;
+	private static Text straﬂeTF;
+	private static Text hausnummerTF;
+	private static Text postleitzahlTF;
+	private static Text ortTF;
+	private static Label VornameTFout;
+	private static Label NachnameTFout;
 
 	/**
 	 * Launch the application.
@@ -29,7 +31,7 @@ public class MyFirstGUI extends MyFirstGUIWindow {
 	public static void main(String[] args) {
 		Display display = Display.getDefault();
 		Shell shlLhwindow = new Shell();
-		shlLhwindow.setBackground(SWTResourceManager.getColor(SWT.COLOR_TRANSPARENT));
+		shlLhwindow.setBackground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_BACKGROUND));
 		shlLhwindow.setCapture(true);
 		shlLhwindow.setCursor(SWTResourceManager.getCursor(SWT.CURSOR_HAND));
 		shlLhwindow.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BORDER));
@@ -41,12 +43,15 @@ public class MyFirstGUI extends MyFirstGUIWindow {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				System.out.println("Ihre Daten:");
-				System.out.println(VN.getText());
-				System.out.println(NN.getText());
-				System.out.println(HN.getText());
-				System.out.println(PLZ.getText());
-				System.out.println(Ort.getText());
-				System.out.println(STR.getText());
+				System.out.println(VornameTF.getText());
+				System.out.println(NachnameTF.getText());
+				System.out.println(hausnummerTF.getText());
+				System.out.println(postleitzahlTF.getText());
+				System.out.println(ortTF.getText());
+				System.out.println(straﬂeTF.getText());
+				//
+				
+				
 				
 				
 			}
@@ -78,24 +83,24 @@ public class MyFirstGUI extends MyFirstGUIWindow {
 		lblOrt.setText("Ort");
 		lblOrt.setBounds(10, 236, 55, 15);
 		
-		VN = new Text(shlLhwindow, SWT.BORDER);
-		VN.setBounds(98, 38, 98, 21);
+		VornameTF = new Text(shlLhwindow, SWT.BORDER);
+		VornameTF.setBounds(98, 38, 98, 21);
 		
-		NN = new Text(shlLhwindow, SWT.BORDER);
-		NN.setBounds(98, 75, 98, 21);
+		NachnameTF = new Text(shlLhwindow, SWT.BORDER);
+		NachnameTF.setBounds(98, 75, 98, 21);
 		
-		STR = new Text(shlLhwindow, SWT.BORDER);
-		STR.setBounds(98, 114, 98, 21);
+		straﬂeTF = new Text(shlLhwindow, SWT.BORDER);
+		straﬂeTF.setBounds(98, 114, 98, 21);
 		
-		HN = new Text(shlLhwindow, SWT.BORDER);
-		HN.setBounds(98, 153, 98, 21);
+		hausnummerTF = new Text(shlLhwindow, SWT.BORDER);
+		hausnummerTF.setBounds(98, 153, 98, 21);
 		
-		PLZ = new Text(shlLhwindow, SWT.BORDER);
-		PLZ.setBounds(98, 195, 98, 21);
+		postleitzahlTF = new Text(shlLhwindow, SWT.BORDER);
+		postleitzahlTF.setBounds(98, 195, 98, 21);
 		
-		Ort = new Text(shlLhwindow, SWT.BORDER);
-		Ort.setText("");
-		Ort.setBounds(98, 233, 98, 21);
+		ortTF = new Text(shlLhwindow, SWT.BORDER);
+		ortTF.setText("");
+		ortTF.setBounds(98, 233, 98, 21);
 		
 		Button btnAbbrechen = new Button(shlLhwindow, SWT.NONE);
 		btnAbbrechen.addSelectionListener(new SelectionAdapter() {
@@ -114,7 +119,13 @@ public class MyFirstGUI extends MyFirstGUIWindow {
 			}
 		});
 		composite.setBounds(221, 187, 191, 64);
-		shlLhwindow.setTabList(new Control[]{VN, NN, STR, HN, PLZ, Ort, btnNewButton});
+		
+		VornameTFout = new Label(shlLhwindow, SWT.NONE);
+		VornameTFout.setBounds(221, 41, 55, 15);
+		
+		NachnameTFout = new Label(shlLhwindow, SWT.NONE);
+		NachnameTFout.setBounds(221, 78, 55, 15);
+		shlLhwindow.setTabList(new Control[]{VornameTF, NachnameTF, straﬂeTF, hausnummerTF, postleitzahlTF, ortTF, btnNewButton});
 
 		shlLhwindow.open();
 		shlLhwindow.layout();
@@ -123,5 +134,17 @@ public class MyFirstGUI extends MyFirstGUIWindow {
 				display.sleep();
 			}
 		}
+	}
+	public Text getVNTF() {
+		return VornameTF;
+	}
+	public Text getNNTF() {
+		return NachnameTF;
+	}
+	public Label getVornameTFout() {
+		return VornameTFout;
+	}
+	public Label getNachnameTFout() {
+		return NachnameTFout;
 	}
 }

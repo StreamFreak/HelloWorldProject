@@ -5,6 +5,12 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import data.Person;
+
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -88,6 +94,19 @@ public class GUIWIndow {
 		btnNewButton = new Button(shell, SWT.NONE);
 		btnNewButton.setBounds(268, 226, 75, 25);
 		btnNewButton.setText("New Button");
+		
+		Button btnNewButton_1 = new Button(shell, SWT.NONE);
+		btnNewButton_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+				//
+				System.out.println(gson.toJson(Person.getListe()));
+				
+			}
+		});
+		btnNewButton_1.setBounds(268, 198, 75, 25);
+		btnNewButton_1.setText("New Button");
 
 	}
 	public Text getVornameTF() {

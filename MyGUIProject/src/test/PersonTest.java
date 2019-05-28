@@ -9,7 +9,7 @@ public class PersonTest {
 		String personText;
 		//
 		Person p1; // Variablen Definiton
-		p1 = new Person(); //Instanzierung
+		p1 = new Person(); // Instanzierung
 		//
 		p1.setVorname("Hans");
 		p1.setNachname("Huber");

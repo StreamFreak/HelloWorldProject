@@ -10,20 +10,18 @@ public class Schleife2 {
 		for (int i = 0; i < 3; i++) {
 			System.out.println("während");
 		}
- 		// nach der Schleife
+		// nach der Schleife
 		System.out.println("nach");
 		//
 		// innere und äußeren Schleifen
 		for (int i = 0; i < 3; i++) {
 			System.out.println("wie oft hier vor?" + i);
 			//
-			for (int x = 0; x < 4; x ++) {
-				System.out.println("wie oft?" + (x+i));
+			for (int x = 0; x < 4; x++) {
+				System.out.println("wie oft?" + (x + i));
 			}
 			//
 			System.out.println("wie oft hier nach?" + i);
 		}
-
 	}
-
 }

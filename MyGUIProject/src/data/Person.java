@@ -73,4 +73,8 @@ public class Person {
 		return liste;
 
 	}
+
+	public static void setListe(ArrayList<Person> liste) {
+		Person.liste = liste;
+	}
 }
